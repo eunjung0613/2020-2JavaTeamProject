@@ -82,19 +82,5 @@ public class SignIn extends JFrame {
 	setSize(300, 400);
 	setVisible(true);
 	}
-
-	public static void main(String [] args) {
-		EventQueue.invokeLater(new Runnable() {
-		public void run() {
-			try {
-				SignIn In = new SignIn();
-			} catch(Exception e) {
-				e.printStackTrace();
-			}
-		}
-
-		});
-	}
-	}
-
+}
 
