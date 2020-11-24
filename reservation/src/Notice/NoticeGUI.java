@@ -3,7 +3,6 @@ package Notice;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -11,16 +10,16 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-
 import java.sql.*;
+import Join.SignIn;
 
 public class NoticeGUI extends JFrame {
 	public NoticeGUI() {
 		
 
 		JFrame fr = new JFrame("공지사항");
-		String header[] = {"번호","공지이름","내용","작성자"};// 나중에 DB로 내용 긁어와 붙이는 작업 예정
-		String ID="admin";
+		String header[] = {"번호","공지이름","내용"};// 나중에 DB로 내용 긁어와 붙이는 작업 예정
+		String NID = SignIn.getID();
 		DefaultTableModel model = new DefaultTableModel(header,0);
 		JTable table = new JTable(model);
 		JScrollPane pane = new JScrollPane(table);
@@ -42,9 +41,8 @@ public class NoticeGUI extends JFrame {
 				int num = rs.getInt("num");
 				String title = rs.getString("title");
 				String memo = rs.getString("memo");
-				String id = rs.getString("id");
 
-				Object data[] = {num,title,memo,id};
+				Object data[] = {num,title,memo};
 				model.addRow(data);
 			}
 		}catch(SQLException e) {
@@ -72,7 +70,7 @@ public class NoticeGUI extends JFrame {
 		fr.add(delete);
 		fr.add(OK);
 		
-		if(!ID.equals("admin")) {
+		if(!NID.equals("admin")) {
 			Modify.setVisible(false);
 			add.setVisible(false);
 			delete.setVisible(false);
@@ -133,7 +131,6 @@ public class NoticeGUI extends JFrame {
 						System.out.println("에러: "+e1);
 					}
 					fr.dispose();
-					new NoticeGUI();
 				}
 				else {
 					//NO버튼 클릭시 쓰던 것 계속 작성.

@@ -36,7 +36,6 @@ public class Modify extends JFrame{
 			while(rs.next()) {
 				dto.setMemo(rs.getString("memo"));
 				dto.setTitle(rs.getString("title"));
-				dto.setId(rs.getString("id"));
 			}
 		}catch(SQLException e1) {
 			System.out.println("¿¡·¯: "+e1);

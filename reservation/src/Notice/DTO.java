@@ -2,7 +2,7 @@ package Notice;
 
 public class DTO {
 	int num;
-	String title,memo,id;
+	String title,memo;
 	public int getNum() {
 		return num;
 	}
@@ -20,12 +20,6 @@ public class DTO {
 	}
 	public void setMemo(String memo) {
 		this.memo = memo;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
 	}
 	
 }
