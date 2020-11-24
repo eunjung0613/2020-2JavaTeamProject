@@ -64,7 +64,7 @@ public class add extends JFrame{
 							sql = "SELECT num FROM prmodoris.Notice order by num desc limit 1";
 							stmt=(Statement)conn.createStatement();
 							rs=stmt.executeQuery(sql);
-								sql = "insert into prmodoris.Notice VALUES ("+lastnum2+",'admin','"+title2+"','"+text+"')";
+								sql = "insert into prmodoris.Notice VALUES ("+lastnum2+",'"+title2+"','"+text+"')";
 								stmt=(Statement)conn.createStatement();
 								int affect = stmt.executeUpdate(sql);
 								if(affect==1) {
