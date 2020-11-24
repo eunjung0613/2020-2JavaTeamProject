@@ -149,7 +149,7 @@ public class SignUp extends JFrame {
 				
 				for(int k = 0; k < Temail.getText().trim().length(); k++) {
 					char chaa = Temail.getText().trim().charAt(k);
-					if(!(chaa >= '0' && chaa <= '9') && !(chaa >= 'a' && chaa<= 'z') &&!(chaa >='A' && chaa <='Z') && !(chaa == '@') && !(chaa == '.')) {
+					if(!(chaa >= '0' && chaa <= '9') && !(chaa >= 'a' && chaa<= 'z') &&!(chaa >='A' && chaa <='Z') && ! (chaa == '@') && ! (chaa == '.')) {
 					JOptionPane.showMessageDialog(null,"이메일은 영문 대소문자, 숫자, @, .만 입력가능합니다.","ERROR",JOptionPane.ERROR_MESSAGE);
 						return;
 					}
