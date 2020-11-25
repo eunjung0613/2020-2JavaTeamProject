@@ -14,6 +14,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class SignIn extends JFrame {
+	private static String NNid;
 	JLabel ID;
 	JLabel PW;
 
@@ -23,6 +24,7 @@ public class SignIn extends JFrame {
 	public SignIn() {
 		setTitle("자리 예약 프로그램");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		MemberDTO dtoa = new MemberDTO();
 	
 	GridLayout grid = new GridLayout(8,2);
 	grid.setVgap(10);
@@ -37,6 +39,7 @@ public class SignIn extends JFrame {
 	TPW = new JPasswordField(10);
 	
 	String id = TID.getText();
+	NNid = id;
 	String password= new String(TPW.getPassword());
 	
 	TPW.setEchoChar('*');
@@ -81,6 +84,12 @@ public class SignIn extends JFrame {
 
 	setSize(300, 400);
 	setVisible(true);
+	}
+	
+	public static String getID() {
+		String NId = NNid;
+		return NId;
+
 	}
 }
 
