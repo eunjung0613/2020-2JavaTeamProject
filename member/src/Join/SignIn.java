@@ -64,6 +64,7 @@ public class SignIn extends JFrame {
 		if(result == 1) {
 			JOptionPane.showMessageDialog(null,"로그인이 되었습니다.","OK",JOptionPane.INFORMATION_MESSAGE);
 			dispose();
+			new NoticeGUI();
 			
 		} else {
 			JOptionPane.showMessageDialog(null,"로그인에 실패하였습니다.","ERROR",JOptionPane.ERROR_MESSAGE);
