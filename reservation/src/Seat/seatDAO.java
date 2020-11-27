@@ -1,4 +1,4 @@
-package javaproject;
+package Seat;
 
 import java.sql.*;
 

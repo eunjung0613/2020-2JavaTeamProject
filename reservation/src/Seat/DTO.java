@@ -1,4 +1,4 @@
-package javaproject;
+package Seat;
 
 public class DTO {
 	private long seatTime;

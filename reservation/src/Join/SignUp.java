@@ -121,7 +121,7 @@ public class SignUp extends JFrame {
 				for(int c = 0; c < TPW.getText().trim().length(); c++) {
 					char chaaaa = TPW.getText().trim().charAt(c);
 					if(!(chaaaa >= '0' && chaaaa <= '9') &&! (chaaaa >= 'a' && chaaaa <= 'z') &&!(chaaaa >='A' && chaaaa <='Z')) {
-					JOptionPane.showMessageDialog(null,"아이디는 영문 대소문자, 숫자만 입력가능합니다.","ERROR",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,"비밀번호는 영문 대소문자, 숫자만 입력가능합니다.","ERROR",JOptionPane.ERROR_MESSAGE);
 					return;
 					}
 				}
@@ -149,7 +149,7 @@ public class SignUp extends JFrame {
 				
 				for(int k = 0; k < Temail.getText().trim().length(); k++) {
 					char chaa = Temail.getText().trim().charAt(k);
-					if(!(chaa >= '0' && chaa <= '9') && !(chaa >= 'a' && chaa<= 'z') &&!(chaa >='A' && chaa <='Z') && (cha == '@') && (cha == '.')) {
+					if(!(chaa >= '0' && chaa <= '9') && !(chaa >= 'a' && chaa<= 'z') &&!(chaa >='A' && chaa <='Z') && ! (chaa == '@') && ! (chaa == '.')) {
 					JOptionPane.showMessageDialog(null,"이메일은 영문 대소문자, 숫자, @, .만 입력가능합니다.","ERROR",JOptionPane.ERROR_MESSAGE);
 						return;
 					}

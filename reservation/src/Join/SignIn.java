@@ -12,7 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import Notice.*;
+
+import Notice.NoticeGUI;
 
 public class SignIn extends JFrame {
 	private static String NNid;
@@ -21,10 +22,11 @@ public class SignIn extends JFrame {
 
 	JTextField TID;
 	JPasswordField TPW;
+	
 	public SignIn() {
 		setTitle("자리 예약 프로그램");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		MemberDTO dtoa = new MemberDTO(); //멤버 변수 dto에 집어넣기
+		MemberDTO dtoa = new MemberDTO();
 	
 	GridLayout grid = new GridLayout(8,2);
 	grid.setVgap(10);
@@ -39,10 +41,11 @@ public class SignIn extends JFrame {
 	TPW = new JPasswordField(10);
 	
 	String id = TID.getText();
-	NNid=id;
+	NNid = id;
 	String password= new String(TPW.getPassword());
-	TPW.setEchoChar('*');	
 	
+	TPW.setEchoChar('*');
+		
 	c.add(ID);
 	c.add(TID);
 	c.add(PW);
@@ -85,11 +88,11 @@ public class SignIn extends JFrame {
 	setSize(300, 400);
 	setVisible(true);
 	}
+	
 	public static String getID() {
 		String NId = NNid;
 		return NId;
+
 	}
 }
-
-
 

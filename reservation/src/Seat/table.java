@@ -1,8 +1,10 @@
-package javaproject;
+package Seat;
 import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.event.*;
+
+import Join.SignIn;
 public class table extends JFrame{
 	int [] a = {0, 0, 0, 0, 0, 0, 0, 0}; //자리별 예약여부 1이면 예약 0이면 빈자리
 	String name [] = new String[8];
@@ -201,7 +203,7 @@ public class table extends JFrame{
 					a[seatState]=1;				//seatState 자리를 예약
 					btn[seatState].setBackground(Color.RED);
 					name[seatState] = id ;
-					System.out.println(ID);
+					System.out.println(id);
 					la.setText(seatState+1+"번자리 예약 완료");
 					time1 = System.currentTimeMillis ();
 
