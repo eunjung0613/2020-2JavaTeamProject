@@ -14,9 +14,9 @@ public class seatDAO {
 		conn = DBConnection.getConnection();
 		
 		try {
-			String s = "update Info set seatTime= ? where ID= ?";
+			String s = "update Info set seatTime= seatTime+? where ID= ?";
 			pstmt=conn.prepareStatement(s);
-			pstmt.setLong(1,Timeup.getSeatTime());
+			pstmt.setFloat(1,+Timeup.getSeatTime());
 			pstmt.setString(2,Timeup.getID());
 			pstmt.executeUpdate();
 		}catch (SQLException e) {

@@ -145,6 +145,7 @@ public class NoticeGUI extends JFrame {
 						System.out.println("에러: "+e1);
 					}
 					fr.dispose();
+					new NoticeGUI();
 				}
 				else {
 					//NO버튼 클릭시 쓰던 것 계속 작성.

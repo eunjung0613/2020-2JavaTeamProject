@@ -6,17 +6,17 @@ public class DTO {
 	public DTO() {
 		
 	}
-	public DTO(String ID, long seatTime) {
+	public DTO(String ID,long seatTime) {
 		this.ID=ID;
 		this.seatTime=seatTime;
 	}
-	public void setTime(long time) {
-		this.seatTime=time; 
+	public void setTime(long timeup) {
+		this.seatTime=timeup; 
 	}
 	public void LogingID(String logID) {
 		this.ID=logID;
 	}
-	public long getSeatTime() {
+	public float getSeatTime() {
 		return seatTime;
 	}
 	public String getID() {
@@ -26,4 +26,5 @@ public class DTO {
 		return "DTO [seatTime= " + seatTime +"ID"+ID+"]";
 	}
 }
+
 

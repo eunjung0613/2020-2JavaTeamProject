@@ -18,7 +18,7 @@ public class MemberDao {
 			conn = DBConnection.getConnection();
 			
 			try {
-				String SQL = "select *from `Info` where id = ? and password = ?";
+				String SQL = "select *from prmodoris.Info where id = ? and password = ?";
 				pstmt = conn.prepareStatement(SQL);
 				pstmt.setString(1, id);
 				pstmt.setString(2, password);

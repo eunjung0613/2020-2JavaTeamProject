@@ -88,8 +88,9 @@ public class table extends JFrame{
 	
 			
 					}
+			
 		}
-	public class MyActionListener extends SignIn implements ActionListener {
+	public class MyActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			JButton b = (JButton)e.getSource();
 			String id = SignIn.getID();
@@ -220,9 +221,9 @@ public class table extends JFrame{
 					btn[seatState].setBackground(Color.white);	
 					name[seatState] = null;
 					la.setText(seatState+1+"번자리 반납 완료");
-					time2 = System.currentTimeMillis ();
+					time2 = System.currentTimeMillis ();			//끝난시각측정
 					timeup= time2-time1;
-					timeup = (timeup/1000);
+					timeup = (timeup/1000/60);						//분단위 측정
 					System.out.println(timeup);
 					System.out.println(id);
 					d.setTime(timeup);
@@ -239,12 +240,12 @@ public class table extends JFrame{
 				}
 			}
 			else if(b.getText().equals("MAIN")) {			//
-
+				dispose();
+				new MainGui();
 		}
 		
 	}
 	}
-		
 	public static void setSeatTime(long time) {
 		timeup=time;
 	}
@@ -253,5 +254,6 @@ public class table extends JFrame{
 		return timeup;
 	}
 	}
+
 
 
