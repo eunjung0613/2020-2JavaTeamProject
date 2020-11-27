@@ -5,6 +5,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 
 import Join.SignIn;
+import Main.MainGui;
 public class table extends JFrame{
 	int [] a = {0, 0, 0, 0, 0, 0, 0, 0}; //자리별 예약여부 1이면 예약 0이면 빈자리
 	String name [] = new String[8];
@@ -87,7 +88,6 @@ public class table extends JFrame{
 	
 			
 					}
-			
 		}
 	public class MyActionListener extends SignIn implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
@@ -239,18 +239,12 @@ public class table extends JFrame{
 				}
 			}
 			else if(b.getText().equals("MAIN")) {			//
-				
-			
+
 		}
 		
 	}
 	}
 		
-		
-	public static void main(String[] args) {
-		table a = new table();
-
-	}
 	public static void setSeatTime(long time) {
 		timeup=time;
 	}

@@ -12,6 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.sql.*;
 import Join.SignIn;
+import Main.MainGui;
 
 public class NoticeGUI extends JFrame {
 	public NoticeGUI() {
@@ -53,11 +54,13 @@ public class NoticeGUI extends JFrame {
 		JButton add = new JButton("글쓰기");
 		JButton delete = new JButton("삭제");
 		JButton OK = new JButton("확인");
+		JButton re = new JButton("돌아가기");
 		
 		fr.setLayout(null);
 		fr.setBounds(10, 10, 800, 800);
 		fr.setVisible(true);
 		
+		re.setBounds(650,10,100,30);
 		pane.setBounds(50, 50, 700, 550);
 		Modify.setBounds(80, 650, 100, 50);
 		add.setBounds(260, 650, 100, 50);
@@ -69,12 +72,23 @@ public class NoticeGUI extends JFrame {
 		fr.add(Modify);
 		fr.add(delete);
 		fr.add(OK);
+		fr.add(re);
 		
 		if(!NID.equals("admin")) {
 			Modify.setVisible(false);
 			add.setVisible(false);
 			delete.setVisible(false);
 		}
+		re.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				fr.dispose();
+				new MainGui();
+			}
+			
+		});
 		add.addActionListener(new ActionListener() {
 
 			@Override
@@ -175,4 +189,3 @@ public class NoticeGUI extends JFrame {
 		}return lastnum2;
 	}
 }
-//버튼마다 각 작업 할 일 생각해서 다음주 까지 완성. DB연동계획

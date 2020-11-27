@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import Notice.NoticeGUI;
+import Main.*;
 
 public class SignIn extends JFrame {
 	private static String NNid;
@@ -41,9 +41,8 @@ public class SignIn extends JFrame {
 	TPW = new JPasswordField(10);
 	
 	String id = TID.getText();
-	NNid = id;
 	String password= new String(TPW.getPassword());
-	
+	NNid = id;
 	TPW.setEchoChar('*');
 		
 	c.add(ID);
@@ -58,6 +57,7 @@ public class SignIn extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 		
 		String id = TID.getText();
+		NNid = id;
 		String password = new String(TPW.getPassword());
 		MemberDao dao = MemberDao.getInstance();
 		
@@ -66,7 +66,7 @@ public class SignIn extends JFrame {
 		if(result == 1) {
 			JOptionPane.showMessageDialog(null,"로그인이 되었습니다.","OK",JOptionPane.INFORMATION_MESSAGE);
 			dispose();
-			new NoticeGUI();
+			new MainGui();
 			
 		} else {
 			JOptionPane.showMessageDialog(null,"로그인에 실패하였습니다.","ERROR",JOptionPane.ERROR_MESSAGE);
@@ -92,7 +92,6 @@ public class SignIn extends JFrame {
 	public static String getID() {
 		String NId = NNid;
 		return NId;
-
 	}
 }
 
