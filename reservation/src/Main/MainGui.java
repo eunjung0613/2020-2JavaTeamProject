@@ -10,6 +10,7 @@ import Join.*;
 import Join.DBConnection;
 import Notice.*;
 import Seat.*;
+import info.*;
 
 public class MainGui extends JFrame {
 	public MainGui() {
@@ -80,6 +81,17 @@ public class MainGui extends JFrame {
 				// TODO Auto-generated method stub
 				fr.dispose();
 				new table();
+			}
+			
+		});
+		
+		Info.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				fr.dispose();
+				new javaGui();
 			}
 			
 		});
