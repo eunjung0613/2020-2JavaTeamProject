@@ -1,6 +1,11 @@
 package info;
 import javax.swing.*;
+
+import Main.MainGui;
+
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 public class OK extends JFrame {
 	
 		public static JPanel contentPane;
@@ -13,17 +18,26 @@ public class OK extends JFrame {
 			Container c =getContentPane();
 			c.setLayout(null);
 
-	        JLabel utime =new JLabel("ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤.");
+	        JLabel utime =new JLabel("º¯°æµÇ¾ú½À´Ï´Ù.");
 	        utime.setBounds(150,70,250,150);
 	        c.add(utime);
 	        
+	        JButton conf = new JButton("È®ÀÎ");
+	        conf.setBounds(170, 230, 60, 30);
+	        c.add(conf);
+	        
 	        setSize(400,300);
 			setVisible(true);
+			
+			conf.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					// TODO Auto-generated method stub
+					dispose();
+				}
+				
+			});
 	        }
-
-	public static void main(String[] args) {
-		new OK();
-
-	}
 
 }

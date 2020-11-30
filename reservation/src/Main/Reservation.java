@@ -7,5 +7,4 @@ public class Reservation {
 		// TODO Auto-generated method stub
 		new SignIn();
 	}
-
 }

@@ -1,6 +1,8 @@
 package info;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Cancel extends JFrame {
 	public static JPanel contentPane;
@@ -13,17 +15,25 @@ public class Cancel extends JFrame {
 		Container c =getContentPane();
 		c.setLayout(null);
 
-        JLabel utime =new JLabel("ë³€ê²½ì´ ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤.");
+        JLabel utime =new JLabel("Ãë¼ÒµÇ¾ú½À´Ï´Ù.");
         utime.setBounds(120,60,250,150);
         c.add(utime);
         
+        JButton conf = new JButton("È®ÀÎ"); //Ãß°¡ È®ÀÎ ¹öÆ° Å¬¸¯½Ã ¸ŞÀÎÀ¸·ÎÀÇ±ÍÈ¯
+        conf.setBounds(170, 230, 60, 30);
+        c.add(conf);
+        
         setSize(400,300);
 		setVisible(true);
-        }
+		
+		conf.addActionListener(new ActionListener() {
 	
-	public static void main(String[] args) {
-		new Cancel();
-
-	}
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+			}	
+		});
+	    }
 
 }
